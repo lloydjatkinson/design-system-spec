@@ -1,0 +1,37 @@
+---
+import alertCircle from './alert-circle.svg?raw';
+import barChart from './bar-chart.svg?raw';
+import filter from './filter.svg?raw';
+import bell from './bell.svg?raw';
+import menu from './menu.svg?raw';
+import check from './check.svg?raw';
+import x from './x.svg?raw';
+
+export interface Props {
+    name: IconType;
+};
+const { name } = Astro.props as Props;
+
+type IconType =
+    | 'alert-circle'
+    | 'bar-chart'
+    | 'filter'
+    | 'bell'
+    | 'menu'
+    | 'check'
+    | 'x';
+
+const map: Record<IconType, string> = {
+    'alert-circle': alertCircle,
+    'bar-chart': barChart,
+    'filter': filter,
+    'bell': bell,
+    'menu': menu,
+    'check': check,
+    'x': x,
+};
+
+const svg = map[name];
+---
+
+<Fragment set:html={ svg } />
