@@ -9,5 +9,9 @@ module.exports = {
             'serif': [...defaultTheme.fontFamily.serif],
             'mono': [...defaultTheme.fontFamily.mono]
         },
-	}
+	},
+
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };

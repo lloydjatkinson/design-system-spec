@@ -1,32 +1,83 @@
 ---
+import { Markdown } from 'astro/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Grid from '../components/design/Grid.astro';
 import Component from '../components/design/Component.astro';
 
 import Spacing from '../components/design/Spacing.astro';
+import PaddingMargins from '../components/design/PaddingMargins.astro';
 import TypographyFontWeight from '../components/design/TypographyFontWeight.astro';
+import TypographySize from '../components/design/TypographySize.astro';
+import TypographyResponsive from '../components/design/TypographyResponsive.astro';
 ---
 
 <BaseLayout
-	title="Design System Spec with Tailwind"
-	description="Design System Spec with Tailwind">
-	<Grid columns={1}>
-		<Component
-			state="ready"
-			name="Spacing"
-			description="The default spacing units and design tokens in Tailwind - based on rem units">
-			<Spacing />
-		</Component>
+    title="Design System Spec with Tailwind"
+    description="Design System Spec with Tailwind">
+    <div class="prose prose-img:mx-auto prose-code:text-base max-w-none prose-pre:bg-slate-100 prose-code:text-slate-900 pb-10">
+        <Markdown>
+            ## Introduction
+            
+            This page is for faster iteration of design systems. It is not intended as a replacement for Figma, Zero Height, etc.
 
-		<Grid columns={2}>
-			<Component
-				state="ready"
-				name="Typography - Font Weight"
-				description="The default font weight design tokens in Tailwind">
-				<TypographyFontWeight />
-				<TypographyFontWeight />
-			</Component>
-		</Grid>
+            It's goal is to allow for real designs and design tokens to be tried out in code in a "real" application so that the design process
+            to faciliate faster feedback between designers and developers.
 
-	</Grid>
+            This design system is using Tailwind CSS, a utility class and design token first library.
+        </Markdown>
+    </div>
+
+    <Grid columns={1} gap={4}>
+
+
+        <Component
+            state="wip"
+            name="Spacing"
+            description="The default spacing units and design tokens in Tailwind - based on rem units">
+            <Spacing />
+        </Component>
+
+        <Component
+            state="wip"
+            name="Padding and Margins"
+            description="The padding and margin design tokens are built upon the spacing design tokens">
+            <PaddingMargins />
+        </Component>
+
+        <Component
+            state="wip"
+            name="Typography - Font Weight"
+            description="The default font weight design tokens in Tailwind">
+            <TypographyFontWeight />
+        </Component>
+
+        <Component
+            state="wip"
+            name="Typography - Size"
+            description="The default text size design tokens in Tailwind">
+            <TypographySize />
+        </Component>
+
+        <Component
+            state="ready"
+            name="Typography - Responsive"
+            description="Responsively resize text. Resize this window to see this.">
+            <TypographyResponsive />
+
+            <div class="prose prose-img:mx-auto prose-code:text-base max-w-none prose-pre:bg-slate-100 prose-code:text-slate-900 pb-10">
+                <Markdown>
+                This is achieved by utilising design tokens with modifiers:
+
+                ```
+                <div>
+                    <h3 class="font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-900 dark:text-slate-200">
+                        Almost before we knew it, we had left the ground.
+                    </h3>
+                </div>
+                ```
+                </Markdown>
+            </div>
+        </Component>
+
+    </Grid>
 </BaseLayout>
