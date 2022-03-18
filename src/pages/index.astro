@@ -1,12 +1,32 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Grid from '../components/design/Grid.astro';
+import Component from '../components/design/Component.astro';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Spacing from '../components/design/Spacing.astro';
+import TypographyFontWeight from '../components/design/TypographyFontWeight.astro';
 ---
 
 <BaseLayout
-	>
+	title="Design System Spec with Tailwind"
+	description="Design System Spec with Tailwind">
+	<Grid columns={1}>
+		<Component
+			state="ready"
+			name="Spacing"
+			description="The default spacing units and design tokens in Tailwind - based on rem units">
+			<Spacing />
+		</Component>
+
+		<Grid columns={2}>
+			<Component
+				state="ready"
+				name="Typography - Font Weight"
+				description="The default font weight design tokens in Tailwind">
+				<TypographyFontWeight />
+				<TypographyFontWeight />
+			</Component>
+		</Grid>
+
+	</Grid>
 </BaseLayout>
