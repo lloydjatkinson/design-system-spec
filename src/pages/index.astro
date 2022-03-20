@@ -6,6 +6,7 @@ import Component from '../components/design/Component.astro';
 
 import Spacing from '../components/design/Spacing.astro';
 import PaddingMargins from '../components/design/PaddingMargins.astro';
+import SpacingPlayground from '../components/design/SpacingPlayground.vue';
 import TypographyFontWeight from '../components/design/TypographyFontWeight.astro';
 import TypographySize from '../components/design/TypographySize.astro';
 import TypographyResponsive from '../components/design/TypographyResponsive.astro';
@@ -15,7 +16,7 @@ import TypographyResponsive from '../components/design/TypographyResponsive.astr
     title="Design System Spec with Tailwind"
     description="Design System Spec with Tailwind">
     <div class="prose prose-img:mx-auto prose-code:text-base max-w-none prose-pre:bg-slate-100 prose-code:text-slate-900 pb-10">
-        <Markdown>
+        <!-- <Markdown>
             ## Introduction
             
             This page is for faster iteration of design systems. It is not intended as a replacement for Figma, Zero Height, etc.
@@ -24,17 +25,22 @@ import TypographyResponsive from '../components/design/TypographyResponsive.astr
             can faciliate faster feedback between designers and developers.
 
             This design system is using Tailwind CSS, a utility class and design token first library.
-        </Markdown>
+        </Markdown> -->
     </div>
 
     <Grid columns={1} gap={4}>
-
-
         <Component
             state="wip"
             name="Spacing"
             description="The default spacing units and design tokens in Tailwind - based on rem units">
             <Spacing />
+        </Component>
+
+        <Component
+            state="wip"
+            name="Interactive Spacing"
+            description="Experiment with spacing to help refine values that will be formalised as design tokens. Use the above table as reference.">
+            <SpacingPlayground client:load />
         </Component>
 
         <Component
@@ -65,7 +71,7 @@ import TypographyResponsive from '../components/design/TypographyResponsive.astr
             <TypographyResponsive />
 
             <div class="prose prose-img:mx-auto prose-code:text-base max-w-none prose-pre:bg-slate-100 prose-code:text-slate-900 pb-10">
-                <Markdown>
+                <!-- <Markdown>
                 This is achieved by utilising design tokens with modifiers:
 
                 ```
@@ -75,7 +81,7 @@ import TypographyResponsive from '../components/design/TypographyResponsive.astr
                     </h3>
                 </div>
                 ```
-                </Markdown>
+                </Markdown> -->
             </div>
         </Component>
 
