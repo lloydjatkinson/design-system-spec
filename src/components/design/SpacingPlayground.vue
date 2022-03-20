@@ -1,17 +1,17 @@
 <template>
     <div class="gap-4">
         <div class="space-x-4 py-2">
-            <label for="gap">Items</label>
+            <label for="items">Columns</label>
             <input
                 type="range"
-                id="gap"
-                name="gap"
+                id="items"
+                name="items"
                 min="0"
-                max="10"
+                max="12"
                 step="1"
                 v-model="currentColumns">
             <span class="font-mono">
-                {{ currentColumns }}
+                {{ columns }}
             </span>
         </div>
         <div class="space-x-4 py-2">
@@ -118,7 +118,7 @@ export default defineComponent({
 
     computed: {
         items () {
-            return 10;
+            return 20;
         },
 
         gap () {
