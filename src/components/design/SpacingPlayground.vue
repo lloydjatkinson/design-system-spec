@@ -41,15 +41,23 @@
                 <span class="ml-2">Gap Y</span>
             </label>
         </div>
+        <div class="space-x-4 py-2">
+            <span>
+                Padding:
+            </span>
+            <span class="font-mono">
+                p-2
+            </span>
+        </div>
         <div
             class="grid"
             :class="[gap, columns]">
             <div
                 v-for="(item, index) in items"
                 :key="index"
-                class="bg-green-200 p-4"
+                class="bg-green-200 p-2"
                 :class="{ 'text-red-500': currentGap <= 0 }">
-                {{ item }}
+                {{ item }} - Lorem ipsum dolor
             </div>
         </div>
     </div>
@@ -59,10 +67,10 @@
 import { defineComponent, Prop } from 'vue';
 import clsx from 'clsx';
 
-import { Gap, GridColumns } from './design-tokens';
+import { Gap, GridColumns, Padding } from './design-tokens';
 
 type GapTokens = [ gap: Gap, gapX: Gap, gapY: Gap ];
-const gapTokens: GapTokens[] = [
+const availableGapTokens: GapTokens[] = [
     ['gap-0', 'gap-x-0', 'gap-y-0'],
     ['gap-0.5', 'gap-x-0.5', 'gap-y-0.5'],
     ['gap-1', 'gap-x-1', 'gap-y-1'],
@@ -86,7 +94,7 @@ const gapTokens: GapTokens[] = [
     ['gap-28', 'gap-x-28', 'gap-y-28'],
 ];
 
-const availiableColumns: GridColumns[] = [
+const availiableColumnTokens: GridColumns[] = [
     'grid-cols-1',
     'grid-cols-2',
     'grid-cols-3',
@@ -100,6 +108,8 @@ const availiableColumns: GridColumns[] = [
     'grid-cols-11',
     'grid-cols-12',
 ];
+
+const availiablePadding: Padding[] = []
 
 export default defineComponent({
     name: 'SpacingPlayground',
@@ -122,19 +132,12 @@ export default defineComponent({
         },
 
         gap () {
-            // return `gap: ${this.chosenGap}rem`;
-            return `${ gapTokens[this.currentGap][this.currentGapType] }`;
+            return `${ availableGapTokens[this.currentGap][this.currentGapType] }`;
         },
 
         columns () {
-            return availiableColumns[this.currentColumns];
+            return availiableColumnTokens[this.currentColumns];
         }
     },
-    
-    methods: {
-        setCurrentGapType (gapType: '') {
-
-        }
-    }
 });
 </script>
