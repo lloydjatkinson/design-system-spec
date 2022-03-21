@@ -45,13 +45,13 @@ export type Margin =
     | `mb-${TailwindScale}`;
 
 export type Padding =
-    | `m-${TailwindScale}`
-    | `mx-${TailwindScale}`
-    | `my-${TailwindScale}`
-    | `mt-${TailwindScale}`
-    | `mr-${TailwindScale}`
-    | `ml-${TailwindScale}`
-    | `mb-${TailwindScale}`;
+    | `p-${TailwindScale}`
+    | `px-${TailwindScale}`
+    | `py-${TailwindScale}`
+    | `pt-${TailwindScale}`
+    | `pr-${TailwindScale}`
+    | `pl-${TailwindScale}`
+    | `pb-${TailwindScale}`;
 
 export type Gap =
     | `gap-${TailwindScale}`

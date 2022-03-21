@@ -7,6 +7,7 @@ import Component from '../components/design/Component.astro';
 import Spacing from '../components/design/Spacing.astro';
 import PaddingMargins from '../components/design/PaddingMargins.astro';
 import SpacingPlayground from '../components/design/SpacingPlayground.vue';
+import PaddingMarginPlayground from '../components/design/PaddingMarginPlayground.vue';
 import TypographyFontWeight from '../components/design/TypographyFontWeight.astro';
 import TypographySize from '../components/design/TypographySize.astro';
 import TypographyResponsive from '../components/design/TypographyResponsive.astro';
@@ -48,6 +49,13 @@ import TypographyResponsive from '../components/design/TypographyResponsive.astr
             name="Padding and Margins"
             description="The padding and margin design tokens are built upon the spacing design tokens">
             <PaddingMargins />
+        </Component>
+
+        <Component
+            state="wip"
+            name="Interactive Padding and Margins"
+            description="Experiment with padding and margins to help refine values that will be formalised as design tokens. Use the above table as reference. Note that padding and margins can also be specific eg. pr-10 means right padding of 10.">
+            <PaddingMarginPlayground client:load />
         </Component>
 
         <Component
